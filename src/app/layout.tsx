@@ -1,5 +1,5 @@
 import MuiLayout from "@app/mui.layout";
-import SidebarLayout from "@modules/sidebar/components/SidebarLayout/Sidebar.layout";
+import SidebarLayout from "@modules/sidebar/components/SidebarLayout/SidebarLayout";
 import { Box } from "@ui/atoms";
 import React, { FC, ReactNode } from "react";
 

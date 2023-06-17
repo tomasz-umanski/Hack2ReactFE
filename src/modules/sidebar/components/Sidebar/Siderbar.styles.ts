@@ -5,7 +5,8 @@ export const useSiderbarStyles = () => {
     position: "relative",
     height: 1,
     width: "240px",
-    padding: "40px 16px"
+    padding: "40px 16px",
+    boxShadow: "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
   };
 
   const userNameStyles: SxProps = {
@@ -31,6 +32,10 @@ export const useSiderbarStyles = () => {
     "& div": {
       maxHeight: "36px"
     }
+  };
+
+  const listItemStyles: SxProps = {
+    padding: "0"
   }
 
   return {
@@ -38,6 +43,7 @@ export const useSiderbarStyles = () => {
     formControlStyles,
     textFieldStyles,
     userNameStyles,
-    userEmailStyles
+    userEmailStyles,
+    listItemStyles
   };
 };

@@ -1,8 +1,16 @@
+import { siderbarLinksConstant } from "@modules/sidebar/basic/constants/SiderbarLinks.constant";
+import { SidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
 import { useSiderbarStyles } from "@modules/sidebar/components/Sidebar/Siderbar.styles";
 import {
   Box,
+  Collapse,
   Divider,
   FormControl,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   MenuItem,
   Skeleton,
   Stack,
@@ -12,8 +20,14 @@ import {
 import { FC } from "react";
 
 const Sidebar: FC = () => {
-  const { sidebarWrapper, formControlStyles, textFieldStyles, userNameStyles, userEmailStyles } =
-    useSiderbarStyles();
+  const {
+    sidebarWrapper,
+    formControlStyles,
+    textFieldStyles,
+    userNameStyles,
+    userEmailStyles,
+    listItemStyles
+  } = useSiderbarStyles();
 
   return (
     <Stack sx={sidebarWrapper}>
@@ -41,9 +55,54 @@ const Sidebar: FC = () => {
       </Stack>
       <Divider />
       <Box>
-        <List>
-          <ListItem>
-            <Button></Button>
+        <List disablePadding>
+          {siderbarLinksConstant.map((link: SidebarLink) => {
+            if (!link.subLinks) {
+              return (
+                <ListItem sx={listItemStyles} key={link.label}>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <Skeleton animation="wave" height={40} width={40} variant="rounded" />
+                    </ListItemIcon>
+                    <ListItemText primary={link.label} />
+                  </ListItemButton>
+                </ListItem>
+              );
+            }
+
+            return (
+              <>
+                <ListItem sx={listItemStyles} key={link.label}>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <Skeleton animation="wave" height={40} width={40} variant="rounded" />
+                    </ListItemIcon>
+                    <ListItemText primary={link.label} />
+                  </ListItemButton>
+                </ListItem>
+                <Collapse in={true}>
+                  {link.subLinks.map((subLink: SidebarLink) => (
+                    <ListItem sx={listItemStyles} key={subLink.label}>
+                      <ListItemButton>
+                        <ListItemIcon>
+                          <Skeleton animation="wave" height={40} width={40} variant="rounded" />
+                        </ListItemIcon>
+                        <ListItemText primary={subLink.label} />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </Collapse>
+              </>
+            );
+          })}
+          <Divider />
+          <ListItem sx={listItemStyles}>
+            <ListItemButton>
+              <ListItemIcon>
+                <Skeleton animation="wave" height={40} width={40} variant="rounded" />
+              </ListItemIcon>
+              <ListItemText primary="Kontakt z miastem" />
+            </ListItemButton>
           </ListItem>
         </List>
       </Box>
