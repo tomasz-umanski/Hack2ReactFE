@@ -12,7 +12,7 @@ const SidebarLayout: FC<Props> = (props) => {
   const { gridContainerStyles, gridItemStyles } = useSidebarLayoutStyles();
 
   return (
-    <Grid container columns={12} sx={gridContainerStyles}>
+    <Grid container sx={gridContainerStyles} wrap="nowrap">
       <Grid item sx={gridItemStyles}>
         <Sidebar />
       </Grid>

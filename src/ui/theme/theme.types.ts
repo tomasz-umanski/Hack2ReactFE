@@ -1,4 +1,6 @@
 /* eslint-disable */
+import { DayCalendarSlotsComponentsProps } from "@mui/x-date-pickers/DateCalendar/DayCalendar";
+
 declare module "@mui/material/styles" {
   interface Theme {
     //radius: Spacing
@@ -31,5 +33,11 @@ declare module "@mui/material/Typography" {
 
   interface TypographyClasses {
     //chip: string
+  }
+}
+
+declare module "@mui/x-date-pickers/DateCalendar" {
+  interface DayCalendarSlotsComponentsProps {
+    highlightedDays?: string[]
   }
 }
