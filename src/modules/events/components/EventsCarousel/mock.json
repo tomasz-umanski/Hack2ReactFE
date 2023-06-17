@@ -1,0 +1,161 @@
+{
+  "content": [
+    {
+      "id": "7fb08bf6-0d19-11ee-be56-0242ac120002",
+      "startDate": "2023-01-01T13:00:00+01:00",
+      "endDate": "2023-01-02T13:00:00+01:00",
+      "title": "Event 1",
+      "content": "Event 1 content",
+      "localization": "Event 1 location",
+      "creationDate": "2023-06-17T19:37:34.530989+02:00",
+      "lastUpdated": "2023-06-17T19:37:34.530989+02:00",
+      "active": true,
+      "mainOrganizationId": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+      "organizationList": [
+        {
+          "id": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 1"
+        },
+        {
+          "id": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 2"
+        }
+      ]
+    },
+    {
+      "id": "826024d8-0d19-11ee-be56-0242ac120002",
+      "startDate": "2023-01-03T13:00:00+01:00",
+      "endDate": "2023-01-04T13:00:00+01:00",
+      "title": "Event 2",
+      "content": "Event 2 content",
+      "localization": "Event 2 location",
+      "creationDate": "2023-06-17T19:37:34.530989+02:00",
+      "lastUpdated": "2023-06-17T19:37:34.530989+02:00",
+      "active": true,
+      "mainOrganizationId": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+      "organizationList": [
+        {
+          "id": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 1"
+        },
+        {
+          "id": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 2"
+        }
+      ]
+    },
+    {
+      "id": "12345678-1234-1234-1234-1234567890ab",
+      "startDate": "2023-01-05T13:00:00+01:00",
+      "endDate": "2023-01-06T13:00:00+01:00",
+      "title": "Event 3",
+      "content": "Event 3 content",
+      "localization": "Event 3 location",
+      "creationDate": "2023-06-17T19:37:34.530989+02:00",
+      "lastUpdated": "2023-06-17T19:37:34.530989+02:00",
+      "active": true,
+      "mainOrganizationId": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+      "organizationList": [
+        {
+          "id": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 1"
+        },
+        {
+          "id": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 2"
+        }
+      ]
+    },
+    {
+      "id": "abcdef12-3456-7890-abcd-ef1234567890",
+      "startDate": "2023-01-07T13:00:00+01:00",
+      "endDate": "2023-01-08T13:00:00+01:00",
+      "title": "Event 4",
+      "content": "Event 4 content",
+      "localization": "Event 4 location",
+      "creationDate": "2023-06-17T19:37:34.530989+02:00",
+      "lastUpdated": "2023-06-17T19:37:34.530989+02:00",
+      "active": true,
+      "mainOrganizationId": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+      "organizationList": [
+        {
+          "id": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 1"
+        },
+        {
+          "id": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 2"
+        }
+      ]
+    },
+    {
+      "id": "918c7b98-0d35-11ee-be56-0242ac120002",
+      "startDate": "2023-02-14T10:00:00+01:00",
+      "endDate": "2023-02-15T10:00:00+01:00",
+      "title": "Event 5",
+      "content": "Event 5 content",
+      "localization": "Event 5 location",
+      "creationDate": "2023-06-17T19:37:34.530989+02:00",
+      "lastUpdated": "2023-06-17T19:37:34.530989+02:00",
+      "active": true,
+      "mainOrganizationId": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+      "organizationList": [
+        {
+          "id": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 1"
+        },
+        {
+          "id": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 2"
+        }
+      ]
+    },
+    {
+      "id": "95579c1c-0d35-11ee-be56-0242ac120002",
+      "startDate": "2023-03-21T19:30:00+01:00",
+      "endDate": "2023-03-22T19:30:00+01:00",
+      "title": "Event 6",
+      "content": "Event 6 content",
+      "localization": "Event 6 location",
+      "creationDate": "2023-06-17T19:37:34.530989+02:00",
+      "lastUpdated": "2023-06-17T19:37:34.530989+02:00",
+      "active": true,
+      "mainOrganizationId": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+      "organizationList": [
+        {
+          "id": "7a6460f8-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 1"
+        },
+        {
+          "id": "9f44bb34-0d2f-11ee-be56-0242ac120002",
+          "name": "Organizacja 2"
+        }
+      ]
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 20,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": true,
+  "totalElements": 6,
+  "totalPages": 1,
+  "size": 20,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "first": true,
+  "numberOfElements": 6,
+  "empty": false
+}
