@@ -1,7 +1,12 @@
 "use client";
 
 import { Box, Button, FormControl, Skeleton, Stack, TextField, Typography } from "@ui/atoms";
+import axios from "axios";
 import React, { ChangeEvent, FC, useState } from "react";
+
+const api = axios.create({
+  baseURL: "http://localhost:8080"
+});
 
 const CityFormPage: FC = () => {
   const [topic, setTopic] = useState<string>("");
@@ -21,21 +26,23 @@ const CityFormPage: FC = () => {
   };
 
   const sendMessage = async () => {
-    await fetch("http://localhost:8080/workspace", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
+    await api
+      .post("/workspace", {
         name: "Jan Kowalski",
         organization: "UKS",
         topic,
         category,
         content
       })
-    }).then(() => {
-      setTopic("");
-      setCategory("");
-      setContent("");
-    });
+      .then(() => {
+        setTopic("");
+        setCategory("");
+        setContent("");
+      });
+  };
+
+  const confirmForm = () => {
+    void sendMessage();
   };
 
   return (
@@ -71,7 +78,7 @@ const CityFormPage: FC = () => {
             onChange={inputContent}
           />
         </FormControl>
-        <Button onClick={() => sendMessage()}>Wyślij wiadomość</Button>
+        <Button onClick={() => confirmForm()}>Wyślij wiadomość</Button>
       </Stack>
     </Box>
   );
