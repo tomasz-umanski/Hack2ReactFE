@@ -1,18 +1,27 @@
 import "server-only";
 
-import { EventsCalendar } from "@modules/events/components";
+import { Announcement } from "@modules/annoucement/components";
+import { EventsCalendar, EventsCarousel } from "@modules/events/components";
 import { LatestProjectList } from "@modules/projects/components";
 import { Box, Button, Skeleton, Stack, Typography } from "@ui/atoms";
 import { FC } from "react";
 
 const Home: FC = () => {
   return (
-    <Stack p="60px 5.5% 50px 3%">
+    <Stack>
       <Typography>Wydarzenia</Typography>
-      <Stack direction="row" gap="32px">
-        <EventsCalendar />
+      <Stack
+        direction="row"
+        gap="32px"
+        justifyContent="flex-start"
+        alignContent="flex-start"
+        mb="15px"
+      >
+        <Box width="328px">
+          <EventsCalendar />
+        </Box>
         <Box>
-          <Stack>
+          <Stack direction="row" justifyContent="space-between" alignItems="center">
             <Typography>Najbliższe wydarzenia</Typography>
             <Button>
               <Typography>Zobacz wszystkie</Typography>
@@ -23,8 +32,27 @@ const Home: FC = () => {
           </Box>
         </Box>
       </Stack>
-      <Typography pb="25px">Najnowsze projekty</Typography>
-      <LatestProjectList />
+      <Stack direction="row" gap="52px">
+        <Box>
+          <Announcement />
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            mt="16px"
+            mb="30px"
+          >
+            <Typography>Najnowsze projekty</Typography>
+            <Button>
+              <Typography>Zobacz wszystkie</Typography>
+            </Button>
+          </Stack>
+          <LatestProjectList />
+        </Box>
+        <Box>
+          <Skeleton animation="wave" height={600} width={468} variant="rectangular" />
+        </Box>
+      </Stack>
     </Stack>
   );
 };

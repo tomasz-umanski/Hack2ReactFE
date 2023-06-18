@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { DayCalendarSlotsComponentsProps } from "@mui/x-date-pickers/DateCalendar/DayCalendar";
 
 declare module "@mui/material/styles" {
   interface Theme {

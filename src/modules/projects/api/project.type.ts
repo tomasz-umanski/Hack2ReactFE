@@ -1,3 +1,5 @@
+import { Organization } from "@modules/organization/api/organization.type";
+
 export interface Project {
   id: string;
   title: string;
@@ -11,4 +13,6 @@ export interface Project {
   lastUpdated: string;
   active: boolean;
   status: string;
+  mainOrganizationId: string;
+  organizationList: Organization[];
 }

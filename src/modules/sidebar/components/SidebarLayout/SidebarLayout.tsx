@@ -16,7 +16,9 @@ const SidebarLayout: FC<Props> = (props) => {
       <Grid item sx={gridItemStyles}>
         <Sidebar />
       </Grid>
-      <Grid item>{children}</Grid>
+      <Grid item width="100%" p="60px 5.5% 50px 3%">
+        {children}
+      </Grid>
     </Grid>
   );
 };

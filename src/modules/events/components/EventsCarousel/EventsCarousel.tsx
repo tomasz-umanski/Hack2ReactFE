@@ -1,7 +1,7 @@
 import { IEvent } from "@modules/events/api/event.type";
 import { EventCard } from "@modules/events/components/EventCard";
+import { Stack } from "@ui/atoms";
 import { FC } from "react";
-import { Carousel } from "react-responsive-carousel";
 
 import { Pagination } from "@/basic/types/pagination.types";
 
@@ -19,11 +19,11 @@ const EventsCarousel: FC = async () => {
   const events = await getData();
 
   return (
-    <Carousel>
+    <Stack direction="row" gap="8px">
       {events.content.map((event) => (
-        <EventCard event={event} />
+        <EventCard key={event.id} event={event} />
       ))}
-    </Carousel>
+    </Stack>
   );
 };
 
