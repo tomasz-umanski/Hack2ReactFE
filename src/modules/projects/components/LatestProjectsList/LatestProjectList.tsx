@@ -1,15 +1,14 @@
 import { Project } from "@modules/projects/api/project.type";
-import { dayjs } from "@services/dates";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@ui/atoms";
-import mockProject from "./mockLatestProjectList.json"
+
 import { Pagination } from "@/basic/types/pagination.types";
 
-const getData = async (): Promise<Pagination<Project>> => {
-  const res: Promise<Pagination<Project>> = await new Promise((resolve) => {
-    resolve(JSON.parse(JSON.stringify(mockProject)) as Pagination<Project>);
-  });
+import ProjectListTableRow from "../AdvanceProjectsList/AdvancedProjectListTable/ProjectListTableRow/ProjectListTableRow";
 
-  return res;
+const getData = async (): Promise<Pagination<Project>> => {
+  const res = await fetch("http://localhost:8080/project?size=6&sort=creationDate,asc");
+
+  return res.json() as Promise<Pagination<Project>>;
 };
 
 const LatestProjectList = async () => {
@@ -30,14 +29,7 @@ const LatestProjectList = async () => {
         </TableHead>
         <TableBody>
           {projects.content.map((project) => (
-            <TableRow>
-              <TableCell>{project.title}</TableCell>
-              <TableCell>{project.status}</TableCell>
-              <TableCell>{dayjs(project.startDateTime).format("DD.MM.YYYY")}</TableCell>
-              <TableCell>{dayjs(project.endDateTime).format("DD.MM.YYYY")}</TableCell>
-              <TableCell>organizator</TableCell>
-              <TableCell>{project.description}</TableCell>
-            </TableRow>
+            <ProjectListTableRow key={project.id} project={project} />
           ))}
         </TableBody>
       </Table>

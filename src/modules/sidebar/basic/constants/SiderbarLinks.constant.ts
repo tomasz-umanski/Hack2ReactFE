@@ -1,38 +1,45 @@
-import { SidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
+import { ISidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
 
-export const siderbarLinksConstant: SidebarLink[] = [
+export const siderbarLinksConstant: ISidebarLink[] = [
   {
     label: "Strona Główna",
-    iconUrl: ""
+    iconUrl: "",
+    link: "/"
   },
   {
-    label: "NGO",
+    label: "Moje NGO",
     iconUrl: "",
-    subLinks: []
+    link: "/ngo"
+  },
+  {
+    label: "Baza NGO",
+    iconUrl: "",
+    link: "/ngo/workspace"
+  },
+  {
+    label: "Baza MŚP",
+    iconUrl: "",
+    link: "/msp/workspace"
   },
   {
     label: "Wydarzenia",
     iconUrl: "",
-    subLinks: []
+    link: "/events"
   },
   {
     label: "Projekty",
     iconUrl: "",
-    subLinks: []
-  },
-  {
-    label: "Konkursy",
-    iconUrl: "",
-    subLinks: []
+    link: "/projects"
   },
   {
     label: "Baza wiedzy",
     iconUrl: "",
-    subLinks: []
+    link: "/wiedza"
   },
   {
     label: "Linki zewnętrzne",
     iconUrl: "",
+    link: "/wiedza",
     subLinks: []
   }
-]
+];

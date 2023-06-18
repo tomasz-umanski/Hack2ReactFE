@@ -24,6 +24,7 @@ const EventsCalendar: FC = async () => {
         slots={{ day: CalendarSlot }}
         slotProps={{
           day: {
+            // @ts-ignore
             highlightedDays
           }
         }}

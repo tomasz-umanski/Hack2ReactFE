@@ -7,7 +7,7 @@ export type TableProps = MuiTableProps;
 
 const Table: FC<TableProps> = (props) => {
   const { children, ...rest } = props;
-  return <MuiTable {...rest}>{ children }</MuiTable>;
+  return <MuiTable {...rest}>{children}</MuiTable>;
 };
 
 export default Table;

@@ -1,7 +1,7 @@
 "use client";
 
-import { projectCategories } from "@modules/projects/basic/constants/projectCategories";
-import { IProjectCategories } from "@modules/projects/basic/types/projectCategories.type";
+import { eventCategories } from "@modules/events/basic/constants/eventCategories";
+import { IEventCategories } from "@modules/events/basic/types/eventCategories.type";
 import { Search } from "@mui/icons-material";
 import {
   Box,
@@ -22,11 +22,11 @@ import React, { ChangeEvent, FC, useEffect, useState } from "react";
 const AdvancedFilterBar: FC = () => {
   const router = useRouter();
   const pathname = usePathname();
-  // @ts-ignore @ts-nocheck
+  // @ts-ignore
   const searchParams: URLSearchParams = useSearchParams() as URLSearchParams;
   const [filters, setFilters] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<IProjectCategories>(
-    {} as IProjectCategories
+  const [selectedCategory, setSelectedCategory] = useState<IEventCategories>(
+    {} as IEventCategories
   );
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const AdvancedFilterBar: FC = () => {
     setFilters(newFilters);
   }, [searchParams]);
 
-  const handleSelectCategory = (category: IProjectCategories): void => {
+  const handleSelectCategory = (category: IEventCategories): void => {
     setSelectedCategory(category);
   };
 
@@ -119,7 +119,7 @@ const AdvancedFilterBar: FC = () => {
           sx={{ width: "185px" }}
           value={selectedCategory?.value || ""}
         >
-          {projectCategories.map((category) => (
+          {eventCategories.map((category) => (
             <MenuItem
               key={category.value}
               value={category.value}

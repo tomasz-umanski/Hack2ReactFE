@@ -9,7 +9,7 @@ const Announcement: FC = () => {
       <Skeleton animation="wave" height={40} width={40} variant="rounded" />
       <Stack>
         <Typography>Warsztaty z pisania wniosków projektowych</Typography>
-        <Typography fontSize="14px" >
+        <Typography fontSize="14px">
           Zapraszamy wszystkie organizacje pozarządowe na warsztaty z pisania wniosków projektowych!
           Szczegóły na stronie www.
         </Typography>

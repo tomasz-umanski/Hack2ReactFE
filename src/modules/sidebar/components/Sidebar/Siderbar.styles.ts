@@ -36,7 +36,7 @@ export const useSiderbarStyles = () => {
 
   const listItemStyles: SxProps = {
     padding: "0"
-  }
+  };
 
   return {
     sidebarWrapper,

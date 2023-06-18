@@ -1,9 +1,10 @@
 import { Project } from "@modules/projects/api/project.type";
-import { dayjs } from "@services/dates";
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@ui/atoms";
 import { FC } from "react";
 
 import { Pagination } from "@/basic/types/pagination.types";
+
+import ProjectListTableRow from "./ProjectListTableRow/ProjectListTableRow";
 
 interface Props {
   projects: Pagination<Project>;
@@ -28,14 +29,7 @@ const AdvancedProjectListTable: FC<Props> = (props) => {
           </TableHead>
           <TableBody>
             {projects.content.map((project) => (
-              <TableRow>
-                <TableCell>{project.title}</TableCell>
-                <TableCell>{project.status}</TableCell>
-                <TableCell>{dayjs(project.startDateTime).format("DD.MM.YYYY")}</TableCell>
-                <TableCell>{dayjs(project.endDateTime).format("DD.MM.YYYY")}</TableCell>
-                <TableCell>{project.organizationList.find((o) => o.id === project.mainOrganizationId)?.name || ""}</TableCell>
-                <TableCell>{project.description}</TableCell>
-              </TableRow>
+              <ProjectListTableRow key={project.id} project={project} />
             ))}
           </TableBody>
         </Table>

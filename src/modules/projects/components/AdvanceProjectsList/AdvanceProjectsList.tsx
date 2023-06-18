@@ -11,11 +11,11 @@ import { Pagination } from "@/basic/types/pagination.types";
 const getData = async (): Promise<Pagination<Project>> => {
   const requestHeaders = headers();
   const paramsString =
-    requestHeaders.get("referer") && new URL(requestHeaders.get("referer")).searchParams.toString();
+    requestHeaders.get("referer") &&
+    new URL(requestHeaders.get("referer")?.toString() || "").searchParams.toString();
 
-  const url = `http://localhost:8080/project${paramsString ? `?${paramsString}` : ""}`;
-  const res = await fetch(url);
-  return res.json();
+  const res = await fetch(`http://localhost:8080/project${paramsString ? `?${paramsString}` : ""}`);
+  return res.json() as Promise<Pagination<Project>>;
 };
 
 const AdvanceProjectsList: FC = async () => {

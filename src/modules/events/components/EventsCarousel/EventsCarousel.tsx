@@ -5,14 +5,10 @@ import { FC } from "react";
 
 import { Pagination } from "@/basic/types/pagination.types";
 
-import eventsMock from "./mock.json";
-
 const getData = async (): Promise<Pagination<IEvent>> => {
-  const res: Promise<Pagination<IEvent>> = new Promise((resolve) => {
-    resolve(JSON.parse(JSON.stringify(eventsMock)) as Pagination<IEvent>);
-  });
+  const res = await fetch("http://localhost:8080/event?size=4&sort=creationDate,desc");
 
-  return res;
+  return res.json() as Promise<Pagination<IEvent>>;
 };
 
 const EventsCarousel: FC = async () => {
