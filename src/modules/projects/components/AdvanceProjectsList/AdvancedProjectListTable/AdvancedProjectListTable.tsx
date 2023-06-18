@@ -28,7 +28,7 @@ const AdvancedProjectListTable: FC<Props> = (props) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {projects.content.map((project) => (
+            {projects.content?.map((project) => (
               <ProjectListTableRow key={project.id} project={project} />
             ))}
           </TableBody>

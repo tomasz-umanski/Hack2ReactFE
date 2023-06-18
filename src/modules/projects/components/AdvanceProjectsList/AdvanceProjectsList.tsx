@@ -11,10 +11,12 @@ import { Pagination } from "@/basic/types/pagination.types";
 const getData = async (): Promise<Pagination<Project>> => {
   const requestHeaders = headers();
   const paramsString =
-    requestHeaders.get("referer") &&
-    new URL(requestHeaders.get("referer")?.toString() || "").searchParams.toString();
+    (requestHeaders.get("referer") &&
+      new URL(requestHeaders.get("referer")?.toString() || "").searchParams.toString()) ||
+    "";
 
-  const res = await fetch(`http://localhost:8080/project${paramsString ? `?${paramsString}` : ""}`);
+  const url = `http://localhost:8080/project?${paramsString}`;
+  const res = await fetch(url, { cache: "no-store" });
   return res.json() as Promise<Pagination<Project>>;
 };
 

@@ -20,8 +20,8 @@ const SidebarLink: FC<Props> = (props) => {
   };
 
   return (
-    <ListItem sx={listItemStyles} onClick={handleRedirect}>
-      <ListItemButton>
+    <ListItem sx={listItemStyles}>
+      <ListItemButton onClick={handleRedirect}>
         <ListItemIcon>
           <Skeleton animation="wave" height={40} width={40} variant="rounded" />
         </ListItemIcon>

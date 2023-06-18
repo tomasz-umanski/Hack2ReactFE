@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   distDir: "dist",
-  reactStrictMode: true,
-  experimental: {
-    serverActions: true
-  },
-  transpilePackages: []
+  reactStrictMode: true
 };
 
 module.exports = nextConfig;

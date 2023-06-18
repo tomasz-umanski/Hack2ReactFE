@@ -60,6 +60,7 @@ const AdvancedFilterBar: FC = () => {
     const search = current.toString();
     const query = search ? `?${search}` : "";
     router.push(`${pathname}${query}`);
+    router.refresh();
   };
 
   const handleStartDate = (value: Dayjs | null) => {
@@ -68,6 +69,7 @@ const AdvancedFilterBar: FC = () => {
     const search = current.toString();
     const query = search ? `?${search}` : "";
     router.push(`${pathname}${query}`);
+    router.refresh();
   };
 
   const handleEndDate = (value: Dayjs | null) => {
