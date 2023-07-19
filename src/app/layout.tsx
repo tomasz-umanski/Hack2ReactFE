@@ -19,7 +19,7 @@ const RootLayout: FC<Props> = (props) => {
     <html lang="en">
       <body>
         <React.StrictMode>
-          <Box sx={{ minHeight: "100vh" }}>
+          <Box sx={{ minHeight: "100vh", backgroundColor: "#F9FAFB" }}>
             <MuiLayout>
               <SidebarLayout>{children}</SidebarLayout>
             </MuiLayout>

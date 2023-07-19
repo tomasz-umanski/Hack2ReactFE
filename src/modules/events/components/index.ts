@@ -1,3 +1,3 @@
 export * from "./AdvanceEventsList";
-export * from "./EventsCalendar";
+export * from "./EventsCalendarSection";
 export * from "./EventsCarousel";

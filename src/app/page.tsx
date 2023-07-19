@@ -1,7 +1,7 @@
 import "server-only";
 
 import { Announcement } from "@modules/annoucement/components";
-import { EventsCalendar, EventsCarousel } from "@modules/events/components";
+import { EventsCalendarSection, EventsCarousel } from "@modules/events/components";
 import { LatestProjectList } from "@modules/projects/components";
 import { Box, Button, Skeleton, Stack, Typography } from "@ui/atoms";
 import { FC } from "react";
@@ -17,9 +17,7 @@ const Home: FC = () => {
         alignContent="flex-start"
         mb="15px"
       >
-        <Box width="328px">
-          <EventsCalendar />
-        </Box>
+        <EventsCalendarSection />
         <Box>
           <Stack direction="row" justifyContent="space-between" alignItems="center">
             <Typography>Najbliższe wydarzenia</Typography>
