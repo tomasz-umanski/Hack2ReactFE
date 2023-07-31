@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 
+import { colors } from "./colors";
 import { components } from "./components";
 import { palette } from "./palette";
 import { spacing } from "./spacing";
@@ -9,5 +10,6 @@ export const theme = createTheme({
   typography: typography,
   palette: palette,
   spacing: spacing,
-  components: components
+  components: components,
+  colors: colors
 });
