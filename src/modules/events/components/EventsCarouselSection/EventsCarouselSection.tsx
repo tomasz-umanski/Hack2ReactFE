@@ -9,10 +9,10 @@ const EventsCarouselSection: FC = () => {
 
   return (
     <Box>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography>{t("upcomingEvents")}</Typography>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4}>
+        <Typography variant="medium_xs">{t("upcomingEvents")}</Typography>
         <Button>
-          <Typography>{t("seeAllEvents")}</Typography>
+          <Typography variant="semibold_text_sm">{t("seeAllEvents")}</Typography>
         </Button>
       </Stack>
       <Box>

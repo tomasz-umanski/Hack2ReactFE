@@ -5,18 +5,22 @@ import { EventsCalendarSection } from "@modules/events/components";
 import { EventsCarouselSection } from "@modules/events/components/EventsCarouselSection";
 import { LatestProjectList } from "@modules/projects/components";
 import { Box, Button, Skeleton, Stack, Typography } from "@ui/atoms";
+import { useTranslations } from "next-intl";
 import { FC } from "react";
 
 const Home: FC = () => {
+  const t = useTranslations("homePage");
+
   return (
     <Stack>
-      <Typography>Wydarzenia</Typography>
+      <Typography variant="medium_sm">{t("eventsHeader")}</Typography>
       <Stack
         direction="row"
         gap="32px"
         justifyContent="flex-start"
         alignContent="flex-start"
-        mb="15px"
+        mb={5}
+        mt={4}
       >
         <EventsCalendarSection />
         <EventsCarouselSection />

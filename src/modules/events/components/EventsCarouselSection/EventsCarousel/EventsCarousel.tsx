@@ -15,7 +15,7 @@ const EventsCarousel: FC = async () => {
   const events = await getData();
 
   return (
-    <Stack direction="row" gap="8px">
+    <Stack direction="row" gap="8px" height={1}>
       {events.content.map((event) => (
         <EventCard key={event.id} event={event} />
       ))}

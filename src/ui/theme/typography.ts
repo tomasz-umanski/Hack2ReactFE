@@ -252,13 +252,13 @@ export const typography: TypographyOptions = <TypographyOptions>{
     lineHeight: "20px",
     color: colors.GRAY_900
   },
-  medium_test_sm: {
+  medium_text_sm: {
     fontWeight: 500,
     fontSize: "14px",
     lineHeight: "20px",
     color: colors.GRAY_900
   },
-  semibold_test_sm: {
+  semibold_text_sm: {
     fontWeight: 600,
     fontSize: "14px",
     lineHeight: "20px",

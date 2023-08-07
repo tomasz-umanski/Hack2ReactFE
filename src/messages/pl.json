@@ -1,4 +1,7 @@
 {
+  "homePage": {
+    "eventsHeader": "Wydarzenia"
+  },
   "events": {
     "upcomingEvents": "Najbliższe wydarzenia",
     "seeAllEvents": "Zobacz wszystkie"
