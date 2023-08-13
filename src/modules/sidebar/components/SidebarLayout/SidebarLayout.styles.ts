@@ -5,12 +5,7 @@ export const useSidebarLayoutStyles = () => {
     minHeight: "100vh"
   };
 
-  const gridItemStyles: SxProps = {
-    width: "240px"
-  };
-
   return {
-    gridContainerStyles,
-    gridItemStyles
+    gridContainerStyles
   };
 };

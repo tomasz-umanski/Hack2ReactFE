@@ -1,24 +1,26 @@
-import { Box, Button, Stack, Typography } from "@ui/atoms";
-import { useTranslations } from "next-intl";
+import { Event } from "@modules/events/api/event.type";
+import { Stack } from "@ui/atoms";
 import { FC } from "react";
 
-import { EventsCarousel } from "./EventsCarousel";
+import { Pagination } from "@/basic/types/pagination.types";
 
-const EventsCarouselSection: FC = () => {
-  const t = useTranslations("events");
+import { EventsCarousel } from "./EventsCarousel";
+import { EventsCarouselHeader } from "./EventsCarouselHeader";
+
+const getData = async (): Promise<Pagination<Event>> => {
+  const res = await fetch("http://localhost:8080/event?size=8&sort=creationDate,desc");
+
+  return res.json() as Promise<Pagination<Event>>;
+};
+
+const EventsCarouselSection: FC = async () => {
+  const events = await getData();
 
   return (
-    <Box>
-      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4}>
-        <Typography variant="medium_xs">{t("upcomingEvents")}</Typography>
-        <Button>
-          <Typography variant="semibold_text_sm">{t("seeAllEvents")}</Typography>
-        </Button>
-      </Stack>
-      <Box>
-        <EventsCarousel />
-      </Box>
-    </Box>
+    <Stack overflow="hidden" direction="column">
+      <EventsCarouselHeader />
+      <EventsCarousel events={events.content} />
+    </Stack>
   );
 };
 

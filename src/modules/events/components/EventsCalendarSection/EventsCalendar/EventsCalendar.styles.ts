@@ -13,38 +13,41 @@ export const useEventsCalendarStyles = () => {
     "& .MuiPickersSlideTransition-root": {
       backgroundColor: "white",
       boxShadow: "0px 1px 2px 0px #1018281A",
-      borderRadius: "10px",
+      borderRadius: 2,
       overflow: "hidden"
     },
 
     "& .MuiDayCalendar-header": {
-      padding: "0 16px",
+      paddingY: 0,
+      paddingX: 3,
       justifyContent: "center",
-      gap: "16px"
+      gap: 3
     },
 
     "& .MuiDayCalendar-monthContainer": {
-      padding: "0 16px",
+      paddingY: 0,
+      paddingX: 3,
       display: "flex",
       justifyContent: "center",
       flexDirection: "column",
-      gap: "8px",
+      gap: 2,
       height: 1
     },
 
     "& .MuiDayCalendar-weekContainer": {
-      gap: "0 16px",
-      margin: "0"
+      rowGap: 0,
+      columnGap: 3,
+      margin: 0
     },
 
     "& .MuiPickersDay-dayWithMargin, & .MuiDayCalendar-weekDayLabel": {
       width: "30px",
       height: "30px",
-      margin: "0"
+      margin: 0
     },
 
     "& .MuiPickersArrowSwitcher-root": {
-      gap: "16px"
+      gap: 3
     },
 
     "& .MuiPickersCalendarHeader-root": {
@@ -56,10 +59,11 @@ export const useEventsCalendarStyles = () => {
     },
 
     "& .MuiPickersCalendarHeader-labelContainer": <CSSProperties>{
-      padding: "0 12px 0 14px",
+      paddingY: 0,
+      paddingX: 3,
       backgroundColor: "white",
       boxShadow: "0px 1px 2px 0px #1018281A",
-      borderRadius: "10px",
+      borderRadius: 16,
       ...typography.semibold_text_sm
     }
   };

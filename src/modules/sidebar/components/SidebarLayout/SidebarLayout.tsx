@@ -9,14 +9,14 @@ interface Props {
 
 const SidebarLayout: FC<Props> = (props) => {
   const { children } = props;
-  const { gridContainerStyles, gridItemStyles } = useSidebarLayoutStyles();
+  const { gridContainerStyles } = useSidebarLayoutStyles();
 
   return (
-    <Grid container sx={gridContainerStyles} wrap="nowrap">
-      <Grid item sx={gridItemStyles}>
+    <Grid container sx={gridContainerStyles} wrap="nowrap" spacing={7} pr={11}>
+      <Grid item xs={2}>
         <Sidebar />
       </Grid>
-      <Grid item width="100%" p="60px 5.5% 50px 3%">
+      <Grid item xs={10} mt={9} mb={8}>
         {children}
       </Grid>
     </Grid>

@@ -1,4 +1,4 @@
-import { IEvent } from "@modules/events/api/event.type";
+import { Event } from "@modules/events/api/event.type";
 import { AdvancedEventCard } from "@modules/events/components/AdvanceEventsList/AdvancedEventCardList/AdvancedEventCard";
 import { Stack } from "@ui/atoms";
 import { FC } from "react";
@@ -6,7 +6,7 @@ import { FC } from "react";
 import { Pagination } from "@/basic/types/pagination.types";
 
 interface Props {
-  events: Pagination<IEvent>;
+  events: Pagination<Event>;
 }
 
 const AdvancedEventCardList: FC<Props> = (props) => {

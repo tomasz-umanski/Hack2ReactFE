@@ -4,9 +4,11 @@ export const useEventCardStyles = () => {
   const cardWrapper: SxProps = {
     border: "1px solid #EAECF0",
     width: "250px",
-    height: "245px",
-    padding: "20px 24px",
-    borderRadius: "8px"
+    height: 1,
+    paddingY: 4,
+    paddingX: 5,
+    borderRadius: 2,
+    gap: 3
   };
 
   return {

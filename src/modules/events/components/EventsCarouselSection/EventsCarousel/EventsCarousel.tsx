@@ -1,25 +1,31 @@
-import { IEvent } from "@modules/events/api/event.type";
+"use client";
+
+import { Event } from "@modules/events/api/event.type";
 import { EventCard } from "@modules/events/components/EventCard";
-import { Stack } from "@ui/atoms";
+import { useEventsCarouselStyles } from "@modules/events/components/EventsCarouselSection/EventsCarousel/EventsCarousel.styles";
+import { Box } from "@ui/atoms";
+import { Swiper, SwiperSlide } from "@ui/organisms";
 import { FC } from "react";
+import { FreeMode } from "swiper/modules";
 
-import { Pagination } from "@/basic/types/pagination.types";
+interface Props {
+  events: Event[];
+}
 
-const getData = async (): Promise<Pagination<IEvent>> => {
-  const res = await fetch("http://localhost:8080/event?size=4&sort=creationDate,desc");
-
-  return res.json() as Promise<Pagination<IEvent>>;
-};
-
-const EventsCarousel: FC = async () => {
-  const events = await getData();
+const EventsCarousel: FC<Props> = (props) => {
+  const { events } = props;
+  const { wrapper } = useEventsCarouselStyles();
 
   return (
-    <Stack direction="row" gap="8px" height={1}>
-      {events.content.map((event) => (
-        <EventCard key={event.id} event={event} />
-      ))}
-    </Stack>
+    <Box sx={wrapper}>
+      <Swiper slidesPerView={4} spaceBetween="8px" freeMode modules={[FreeMode]}>
+        {events.map((event) => (
+          <SwiperSlide key={event.id}>
+            <EventCard event={event} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   );
 };
 

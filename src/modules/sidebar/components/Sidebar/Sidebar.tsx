@@ -1,7 +1,5 @@
 import { siderbarLinksConstant } from "@modules/sidebar/basic/constants/SiderbarLinks.constant";
-import { ISidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
-import { SidebarLink } from "@modules/sidebar/components/Sidebar/SidebarLink";
-import { useSiderbarStyles } from "@modules/sidebar/components/Sidebar/Siderbar.styles";
+import type { SidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
 import {
   Box,
   Collapse,
@@ -15,6 +13,9 @@ import {
   Typography
 } from "@ui/atoms";
 import { FC } from "react";
+
+import { SidebarItemLink } from "./SidebarItemLink";
+import { useSiderbarStyles } from "./Siderbar.styles";
 
 const Sidebar: FC = () => {
   const { sidebarWrapper, formControlStyles, textFieldStyles, userNameStyles, userEmailStyles } =
@@ -47,24 +48,24 @@ const Sidebar: FC = () => {
       <Divider />
       <Box>
         <List disablePadding>
-          {siderbarLinksConstant.map((link: ISidebarLink) => {
+          {siderbarLinksConstant.map((link: SidebarLink) => {
             if (!link.subLinks) {
-              return <SidebarLink key={link.label} link={link} />;
+              return <SidebarItemLink key={link.label} link={link} />;
             }
 
             return (
               <>
-                <SidebarLink link={link} />
+                <SidebarItemLink link={link} />
                 <Collapse in={true}>
-                  {link.subLinks.map((subLink: ISidebarLink) => (
-                    <SidebarLink key={subLink.link} link={subLink} />
+                  {link.subLinks.map((subLink: SidebarLink) => (
+                    <SidebarItemLink key={subLink.link} link={subLink} />
                   ))}
                 </Collapse>
               </>
             );
           })}
           <Divider />
-          <SidebarLink link={{ label: "Kontakt z miastem", iconUrl: "", link: "/city" }} />
+          <SidebarItemLink link={{ label: "Kontakt z miastem", iconUrl: "", link: "/city" }} />
         </List>
       </Box>
     </Stack>

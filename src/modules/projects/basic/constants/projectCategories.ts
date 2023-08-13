@@ -1,6 +1,6 @@
-import { IProjectCategories } from "@modules/projects/basic/types/projectCategories.type";
+import { ProjectCategories } from "@modules/projects/basic/types/projectCategories.type";
 
-export const projectCategories: IProjectCategories[] = [
+export const projectCategories: ProjectCategories[] = [
   {
     label: "Nazwa projektu",
     value: "title"

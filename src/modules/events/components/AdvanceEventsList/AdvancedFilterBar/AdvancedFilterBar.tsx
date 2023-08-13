@@ -1,7 +1,7 @@
 "use client";
 
 import { eventCategories } from "@modules/events/basic/constants/eventCategories";
-import { IEventCategories } from "@modules/events/basic/types/eventCategories.type";
+import { EventCategories } from "@modules/events/basic/types/eventCategories.type";
 import { Search } from "@mui/icons-material";
 import {
   Box,
@@ -25,8 +25,8 @@ const AdvancedFilterBar: FC = () => {
   // @ts-ignore
   const searchParams: URLSearchParams = useSearchParams() as URLSearchParams;
   const [filters, setFilters] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<IEventCategories>(
-    {} as IEventCategories
+  const [selectedCategory, setSelectedCategory] = useState<EventCategories>(
+    {} as EventCategories
   );
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const AdvancedFilterBar: FC = () => {
     setFilters(newFilters);
   }, [searchParams]);
 
-  const handleSelectCategory = (category: IEventCategories): void => {
+  const handleSelectCategory = (category: EventCategories): void => {
     setSelectedCategory(category);
   };
 

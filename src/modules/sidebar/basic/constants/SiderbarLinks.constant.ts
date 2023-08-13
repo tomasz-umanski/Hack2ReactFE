@@ -1,6 +1,6 @@
-import { ISidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
+import { SidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
 
-export const siderbarLinksConstant: ISidebarLink[] = [
+export const siderbarLinksConstant: SidebarLink[] = [
   {
     label: "Strona Główna",
     iconUrl: "",

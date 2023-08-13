@@ -14,14 +14,7 @@ const Home: FC = () => {
   return (
     <Stack>
       <Typography variant="medium_sm">{t("eventsHeader")}</Typography>
-      <Stack
-        direction="row"
-        gap="32px"
-        justifyContent="flex-start"
-        alignContent="flex-start"
-        mb={5}
-        mt={4}
-      >
+      <Stack direction="row" gap={6} mb={3} mt={5}>
         <EventsCalendarSection />
         <EventsCarouselSection />
       </Stack>

@@ -1,7 +1,7 @@
 "use client";
 
 import { projectCategories } from "@modules/projects/basic/constants/projectCategories";
-import { IProjectCategories } from "@modules/projects/basic/types/projectCategories.type";
+import { ProjectCategories } from "@modules/projects/basic/types/projectCategories.type";
 import { Search } from "@mui/icons-material";
 import {
   Box,
@@ -25,8 +25,8 @@ const AdvancedFilterBar: FC = () => {
   // @ts-ignore @ts-nocheck
   const searchParams: URLSearchParams = useSearchParams() as URLSearchParams;
   const [filters, setFilters] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<IProjectCategories>(
-    {} as IProjectCategories
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategories>(
+    {} as ProjectCategories
   );
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const AdvancedFilterBar: FC = () => {
     setFilters(newFilters);
   }, [searchParams]);
 
-  const handleSelectCategory = (category: IProjectCategories): void => {
+  const handleSelectCategory = (category: ProjectCategories): void => {
     setSelectedCategory(category);
   };
 

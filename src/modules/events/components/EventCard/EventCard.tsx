@@ -1,11 +1,11 @@
-import { IEvent } from "@modules/events/api/event.type";
+import { Event } from "@modules/events/api/event.type";
 import { useEventCardStyles } from "@modules/events/components/EventCard/EventCard.styles";
 import { dayjs } from "@services/dates";
 import { Box, Skeleton, Stack, Typography } from "@ui/atoms";
 import { FC } from "react";
 
 interface Props {
-  event: IEvent;
+  event: Event;
 }
 
 const EventCard: FC<Props> = (props) => {
@@ -16,7 +16,7 @@ const EventCard: FC<Props> = (props) => {
   );
 
   return (
-    <Stack width="250px" gap="12px" sx={cardWrapper}>
+    <Stack sx={cardWrapper}>
       <Skeleton animation="wave" height={80} width={200} variant="rectangular" />
       <Box>
         <Stack direction="row" gap="5px" alignItems="center" width="250px">

@@ -1,5 +1,6 @@
+import "./global.css";
+
 import SidebarLayout from "@modules/sidebar/components/SidebarLayout/SidebarLayout";
-import { Box } from "@ui/atoms";
 import { notFound } from "next/navigation";
 import { useLocale } from "next-intl";
 import React, { FC, ReactNode } from "react";
@@ -27,13 +28,9 @@ const LocaleLayout: FC<Props> = (props) => {
   return (
     <html lang={params.locale}>
       <body>
-        <React.StrictMode>
-          <Box sx={{ minHeight: "100vh", backgroundColor: "#F9FAFB" }}>
-            <MuiLayout>
-              <SidebarLayout>{children}</SidebarLayout>
-            </MuiLayout>
-          </Box>
-        </React.StrictMode>
+        <MuiLayout>
+          <SidebarLayout>{children}</SidebarLayout>
+        </MuiLayout>
       </body>
     </html>
   );

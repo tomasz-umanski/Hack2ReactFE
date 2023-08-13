@@ -1,12 +1,12 @@
-import { IEvent } from "@modules/events/api/event.type";
+import { Event } from "@modules/events/api/event.type";
 import { dayjs } from "@services/dates";
 import { Box, Button, Divider, Skeleton, Stack, Typography } from "@ui/atoms";
 import { FC } from "react";
 
-const getData = async (id: string): Promise<IEvent> => {
+const getData = async (id: string): Promise<Event> => {
   const res = await fetch(`http://localhost:8080/event/${id}`);
 
-  return res.json() as Promise<IEvent>;
+  return res.json() as Promise<Event>;
 };
 
 interface Props {

@@ -1,6 +1,6 @@
-import { IEventCategories } from "@modules/events/basic/types/eventCategories.type";
+import { EventCategories } from "@modules/events/basic/types/eventCategories.type";
 
-export const eventCategories: IEventCategories[] = [
+export const eventCategories: EventCategories[] = [
   {
     label: "Nazwa eventu",
     value: "title"

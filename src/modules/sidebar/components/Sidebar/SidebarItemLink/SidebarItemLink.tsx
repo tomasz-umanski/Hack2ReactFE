@@ -1,19 +1,20 @@
 "use client";
 
-import { ISidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
-import { SidebarLinkStyles } from "@modules/sidebar/components/Sidebar/SidebarLink/SidebarLink.styles";
+import { SidebarLink } from "@modules/sidebar/basic/types/sidebarLink.type";
 import { ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton } from "@ui/atoms";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 
+import { useSidebarItemLinkStyles } from "./SidebarItemLink.styles";
+
 interface Props {
-  link: ISidebarLink;
+  link: SidebarLink;
 }
 
-const SidebarLink: FC<Props> = (props) => {
+const SidebarItemLink: FC<Props> = (props) => {
   const { link } = props;
   const router = useRouter();
-  const { listItemStyles } = SidebarLinkStyles();
+  const { listItemStyles } = useSidebarItemLinkStyles();
 
   const handleRedirect = () => {
     router.push(link.link);
@@ -31,4 +32,4 @@ const SidebarLink: FC<Props> = (props) => {
   );
 };
 
-export default SidebarLink;
+export default SidebarItemLink;

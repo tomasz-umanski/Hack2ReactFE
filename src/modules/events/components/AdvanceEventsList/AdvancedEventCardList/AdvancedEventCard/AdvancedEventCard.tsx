@@ -1,6 +1,6 @@
 "use client";
 
-import { IEvent } from "@modules/events/api/event.type";
+import { Event } from "@modules/events/api/event.type";
 import { useAdvancedEventCardStyles } from "@modules/events/components/AdvanceEventsList/AdvancedEventCardList/AdvancedEventCard/AdvancedEventCard.styles";
 import { dayjs } from "@services/dates";
 import { Box, Skeleton, Stack, Typography } from "@ui/atoms";
@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { FC } from "react";
 
 interface Props {
-  event: IEvent;
+  event: Event;
 }
 
 const AdvancedEventCard: FC<Props> = (props) => {

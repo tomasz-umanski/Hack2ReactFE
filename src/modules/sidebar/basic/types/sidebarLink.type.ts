@@ -1,6 +1,6 @@
-export interface ISidebarLink {
+export interface SidebarLink {
   label: string;
   iconUrl: string;
-  subLinks?: ISidebarLink[];
+  subLinks?: SidebarLink[];
   link: string;
 }

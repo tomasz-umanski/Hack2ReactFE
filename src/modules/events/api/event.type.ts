@@ -1,6 +1,6 @@
 import { Organization } from "@modules/organization/api/organization.type";
 
-export interface IEvent {
+export interface Event {
   id: string;
   startDate: string;
   endDate: string;
