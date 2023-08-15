@@ -5,5 +5,20 @@
   "events": {
     "upcomingEvents": "Najbliższe wydarzenia",
     "seeAllEvents": "Zobacz wszystkie"
+  },
+  "announcement": {
+    "seeMore": "Zobacz więcej"
+  },
+  "projects": {
+    "latest": "Najnowsze projekty",
+    "seeAll": "Zobacz wszystkie",
+    "latestProject": {
+      "projectName": "Project",
+      "status": "Status",
+      "startDate": "Start",
+      "endDate": "Koniec",
+      "organization": "Organizator",
+      "description": "Krótki opis"
+    }
   }
 }

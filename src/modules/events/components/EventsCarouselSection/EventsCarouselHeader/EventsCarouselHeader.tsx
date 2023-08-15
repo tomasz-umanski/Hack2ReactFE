@@ -9,6 +9,7 @@ const EventsCarouselHeader: FC = () => {
     <Stack direction="row" justifyContent="space-between" alignItems="center" mb={4} width={1}>
       <Typography variant="medium_xs">{t("upcomingEvents")}</Typography>
       <Button>
+        {/* TODO router */}
         <Typography variant="semibold_text_sm">{t("seeAllEvents")}</Typography>
       </Button>
     </Stack>

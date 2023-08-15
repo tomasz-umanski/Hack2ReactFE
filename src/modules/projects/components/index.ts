@@ -1,2 +1,2 @@
 export * from "./AdvanceProjectsList";
-export * from "./LatestProjectsList";
+export * from "./LatestProjectsSection";

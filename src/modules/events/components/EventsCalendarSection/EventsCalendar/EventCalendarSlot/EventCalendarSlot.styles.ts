@@ -6,7 +6,7 @@ export const useEventCalendarSlotStyles = () => {
 
   const pickersDayStyles: SxProps = {
     ...typography.regular_text_sm,
-    margin: "0",
+    margin: 0,
     width: "30px",
     height: "30px"
   };

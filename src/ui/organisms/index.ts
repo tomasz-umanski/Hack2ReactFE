@@ -1,1 +1,2 @@
-export { FreeMode, Swiper, SwiperSlide } from "./Swiper";
+export * from "./DataGrid";
+export * from "./Swiper";

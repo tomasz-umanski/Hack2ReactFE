@@ -1,8 +1,9 @@
 import { Event } from "@modules/events/api/event.type";
-import { useEventCardStyles } from "@modules/events/components/EventCard/EventCard.styles";
 import { dayjs } from "@services/dates";
 import { Box, Skeleton, Stack, Typography } from "@ui/atoms";
 import { FC } from "react";
+
+import { useEventCardStyles } from "./EventCard.styles";
 
 interface Props {
   event: Event;
@@ -11,22 +12,27 @@ interface Props {
 const EventCard: FC<Props> = (props) => {
   const { event } = props;
   const { cardWrapper } = useEventCardStyles();
-  const mainOrgniazation = event.organizationList.find(
-    (orgnization) => orgnization.id === event.mainOrganizationId
+  const mainOrganization = event.organizationList.find(
+    (organization) => organization.id === event.mainOrganizationId
   );
 
+  /* TODO router */
   return (
     <Stack sx={cardWrapper}>
       <Skeleton animation="wave" height={80} width={200} variant="rectangular" />
       <Box>
-        <Stack direction="row" gap="5px" alignItems="center" width="250px">
+        <Stack direction="row" gap={1} alignItems="center">
           <Skeleton animation="wave" height={15} width={12} variant="rectangular" />
-          <Typography>{event.localization}</Typography>
+          <Typography variant="medium_text_sm">{event.localization}</Typography>
         </Stack>
         <Box>
-          <Typography>{dayjs(event.startDate).format("DD.MM.YYYY")}</Typography>
-          <Typography mb="auto">{event.title}</Typography>
-          <Typography>{mainOrgniazation?.name || ""}</Typography>
+          <Typography variant="medium_text_sm">
+            {dayjs(event.startDate).format("DD.MM.YYYY")}
+          </Typography>
+          <Typography variant="medium_text_md" mb="auto">
+            {event.title}
+          </Typography>
+          <Typography variant="medium_text_sm">{mainOrganization?.name || ""}</Typography>
         </Box>
       </Box>
     </Stack>
