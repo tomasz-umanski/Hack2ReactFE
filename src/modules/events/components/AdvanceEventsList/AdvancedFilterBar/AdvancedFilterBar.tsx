@@ -25,9 +25,7 @@ const AdvancedFilterBar: FC = () => {
   // @ts-ignore
   const searchParams: URLSearchParams = useSearchParams() as URLSearchParams;
   const [filters, setFilters] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<EventCategories>(
-    {} as EventCategories
-  );
+  const [selectedCategory, setSelectedCategory] = useState<EventCategories>({} as EventCategories);
 
   useEffect(() => {
     const newFilters: string[] = [];

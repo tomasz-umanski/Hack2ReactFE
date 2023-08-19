@@ -22,7 +22,9 @@ const Announcement: FC = () => {
         </Typography>
       </Stack>
       <Box width="200px">
-        <Button variant="semibold_text_sm">{t("seeMore")}</Button>
+        <Button>
+          <Typography variant="semibold_text_sm">{t("seeMore")}</Typography>
+        </Button>
       </Box>
     </Stack>
   );
