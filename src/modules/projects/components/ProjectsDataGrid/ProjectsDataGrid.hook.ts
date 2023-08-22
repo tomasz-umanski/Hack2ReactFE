@@ -1,6 +1,9 @@
 import { Project } from "@modules/projects/api/project.type";
+import { latestProjectsColumns } from "@modules/projects/basic/constants/latestProjectsColumns.constants";
 import { LatestProjectsRows } from "@modules/projects/basic/types/latestProjectsRows.types";
 import { dayjs } from "@services/dates";
+import { GridColDef } from "@ui/organisms";
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
 import { Pagination } from "@/basic/types/pagination.types";
@@ -10,8 +13,10 @@ interface Props {
 }
 
 export const useLatestProjectsList = (props: Props) => {
-  const { projects } = props;
+  const { projects, rowCount } = props;
+  const t = useTranslations("");
   const [rows, setRows] = useState<LatestProjectsRows[]>([]);
+  const [columns, setColumns] = useState<GridColDef<LatestProjectsRows>[]>([]);
 
   const prepareRows = useCallback(() => {
     const newRows = projects.content.map((project) => ({
@@ -27,14 +32,29 @@ export const useLatestProjectsList = (props: Props) => {
       description: project.description
     }));
 
+    while (newRows.length < rowCount) {
+      newRows.push({
+        id: "",
+        projectName: ""
+      } as LatestProjectsRows);
+    }
+
     setRows([...newRows]);
-  }, [projects]);
+  }, [projects.content, rowCount]);
+
+  const prepareColumns = useCallback(() => {
+    setColumns(
+      latestProjectsColumns.map((column) => ({ ...column, headerName: t(column.headerName || "") }))
+    );
+  }, [t]);
 
   useEffect(() => {
     prepareRows();
-  }, [prepareRows, projects]);
+    prepareColumns();
+  }, [prepareColumns, prepareRows, projects, t]);
 
   return {
-    rows
+    rows,
+    columns
   };
 };

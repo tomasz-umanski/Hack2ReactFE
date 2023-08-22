@@ -1,22 +1,28 @@
-import { Button, Stack, Typography } from "@ui/atoms";
-import { useTranslations } from "next-intl/dist/src/react-server";
+import { Project } from "@modules/projects/api/project.type";
+import { Box } from "@ui/atoms";
 import { FC } from "react";
 
-import { LatestProjectsList } from "./LatestProjectsList";
+import { Pagination } from "@/basic/types/pagination.types";
 
-const LatestProjectsSection: FC = () => {
-  const t = useTranslations("projects");
+import { ProjectsDataGrid } from "../ProjectsDataGrid";
+import { LatestProjectsHeader } from "./LatestProjectsHeader";
+
+const getData = async (): Promise<Pagination<Project>> => {
+  const res = await fetch("http://localhost:8080/project?size=7&sort=creationDate,asc");
+
+  return res.json() as Promise<Pagination<Project>>;
+};
+
+const LATEST_PROJECTS_ROW_COUNT = 7;
+
+const LatestProjectsSection: FC = async () => {
+  const projects = await getData();
 
   return (
-    <>
-      <Stack direction="row" justifyContent="space-between" alignItems="center" mt={3} mb={3}>
-        <Typography>{t("latest")}</Typography>
-        <Button>
-          <Typography>{t("seeAll")}</Typography>
-        </Button>
-      </Stack>
-      <LatestProjectsList />
-    </>
+    <Box>
+      <LatestProjectsHeader />
+      <ProjectsDataGrid rowCount={LATEST_PROJECTS_ROW_COUNT} projects={projects} />
+    </Box>
   );
 };
 
