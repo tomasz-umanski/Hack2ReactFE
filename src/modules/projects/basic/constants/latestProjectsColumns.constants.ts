@@ -8,6 +8,11 @@ export const latestProjectsColumns: GridColDef<LatestProjectsRows>[] = [
     flex: 1,
     type: "string",
     sortable: true,
+    sortComparator: (v1: string, v2: string) => {
+      if (!v1) return 0;
+      if (!v2) return 0;
+      return v1.localeCompare(v2);
+    },
     resizable: false
   },
   {

@@ -7,7 +7,7 @@ export const useEventsCarouselStyles = () => {
       height: 1
     },
     "& .swiper-slide": {
-      width: "min-content !important"
+      width: "fit-content !important"
     }
   };
 

@@ -17,7 +17,7 @@ const EventsCarouselSection: FC = async () => {
   const events = await getData();
 
   return (
-    <Stack overflow="hidden" direction="column">
+    <Stack overflow="hidden" direction="column" height={1}>
       <EventsCarouselHeader />
       <EventsCarousel events={events.content} />
     </Stack>

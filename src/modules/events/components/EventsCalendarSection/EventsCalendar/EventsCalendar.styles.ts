@@ -6,7 +6,6 @@ export const useEventsCalendarStyles = () => {
   const { typography } = useTheme();
 
   const dateCalendarStyles: SxProps = {
-    width: "340px",
     margin: 0,
     overflow: "visible",
 

@@ -1,21 +1,22 @@
-import { SxProps } from "@mui/system";
+import { SxProps, SystemCssProperties } from "@mui/system";
+import { useTheme } from "@ui/theme";
 
 export const useSiderbarStyles = () => {
-  const sidebarWrapper: SxProps = {
-    position: "relative",
-    height: 1,
+  const { colors } = useTheme();
+
+  const sidebarContainer: SystemCssProperties = {
+    minWidth: "240px",
+    background: colors.PRIMARY_500,
+    minHeight: "100vh"
+  };
+
+  const sidebarFixedContainer: SxProps = {
+    ...sidebarContainer,
+    position: "fixed",
+    top: 0,
+    left: 0,
     paddingY: 7,
-    paddingX: 3,
-    boxShadow: "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
-  };
-
-  const userNameStyles: SxProps = {
-    fontWeight: 600
-  };
-
-  const userEmailStyles: SxProps = {
-    fontWeight: 600,
-    color: "#667085"
+    paddingX: 3
   };
 
   const formControlStyles: SxProps = {
@@ -28,7 +29,6 @@ export const useSiderbarStyles = () => {
 
   const textFieldStyles: SxProps = {
     maxHeight: "36px",
-    color: "#344054",
     "& div": {
       maxHeight: "36px"
     }
@@ -39,11 +39,10 @@ export const useSiderbarStyles = () => {
   };
 
   return {
-    sidebarWrapper,
+    sidebarContainer,
+    sidebarFixedContainer,
     formControlStyles,
     textFieldStyles,
-    userNameStyles,
-    userEmailStyles,
     listItemStyles
   };
 };
